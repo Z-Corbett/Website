@@ -2438,7 +2438,7 @@ textarea{
 .artists .artist .artist-inner-wrapper .profile-picture-wrapper .profile-picture{
     height:100%;
     width:100%;
-    object-fit:cover;
+    object-fit:contain;
     transition:all 0.5s ease;
     -webkit-transition:all 0.5s ease
 }
@@ -2447,9 +2447,9 @@ textarea{
         height:250px !important;
         width:100% !important
     }
-    .artists .artist .artist-inner-wrapper .profile-picture-wrapper .profile-picture{
+    /*.artists .artist .artist-inner-wrapper .profile-picture-wrapper .profile-picture{
         object-position:0 20% !important
-    }
+    }*/
 }
 .artists .artist .content-wrapper{
     padding:1.5rem 1rem;
