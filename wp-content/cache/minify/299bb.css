@@ -1247,7 +1247,8 @@ body.oxygen-aos-enabled{
     overflow-x:hidden
 }
 *,::after,::before{
-    box-sizing:inherit
+    box-sizing:inherit;
+    text-align:center;
 }
 .ct-section-inner-wrap{
     margin-left:auto;
