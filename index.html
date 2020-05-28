@@ -289,49 +289,8 @@ var wpcf7 = {"apiSettings":{"root":"https:\/\/\/wp-json\/contact-form-7\/v1","na
 </script>
 <script src="wp-content/cache/minify/0fef6.js"></script>
 <script type='text/javascript' src='recaptcha/api.js'></script>
-<script type="text/javascript" id="ct-footer-js"></script><script type="text/javascript">
-( function( grecaptcha, sitekey, actions ) {
-	var wpcf7recaptcha = {
-		execute: function( action ) {
-			grecaptcha.execute(
-				sitekey,
-				{ action: action }
-			).then( function( token ) {
-				var forms = document.getElementsByTagName( 'form' );
-				for ( var i = 0; i < forms.length; i++ ) {
-					var fields = forms[ i ].getElementsByTagName( 'input' );
-					for ( var j = 0; j < fields.length; j++ ) {
-						var field = fields[ j ];
-						if ( 'g-recaptcha-response' === field.getAttribute( 'name' ) ) {
-							field.setAttribute( 'value', token );
-							break;
-						}
-					}
-				}
-			} );
-		},
-		executeOnHomepage: function() {
-			wpcf7recaptcha.execute( actions[ 'homepage' ] );
-		},
-		executeOnContactform: function() {
-			wpcf7recaptcha.execute( actions[ 'contactform' ] );
-		},
-	};
-	grecaptcha.ready(
-		wpcf7recaptcha.executeOnHomepage
-	);
-	document.addEventListener( 'change',
-		wpcf7recaptcha.executeOnContactform, false
-	);
-	document.addEventListener( 'wpcf7submit',
-		wpcf7recaptcha.executeOnHomepage, false
-	);
-} )(
-	grecaptcha,
-	'6Lf7ErUUAAAAAFbzDHnSoNJHpk_DHC-OMvfvpAWf',
-	{"homepage":"homepage","contactform":"contactform"}
-);
-</script>
+<script type="text/javascript" id="ct-footer-js"></script>
+
 <script type="text/javascript" id="ct_code_block_js_32">jQuery('.contact-toggle').click(function() {
   jQuery('.modal.contact').addClass('show');
 });
