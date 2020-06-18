@@ -92,23 +92,37 @@
     width: 95%;
     border: 2px dotted #ddd;">
     <div id="_rich_text-36-4" class="oxy-rich-text footer-notice"><p style="text-align: center;font-size: xxx-large;/* box-shadow: 0px 2px 0px 0px black; */">Transaction Success.</p>
+      <p>Almost finished! To be listed, what we need now is your :
+      <strong><p>Business Name</p>
+      <p>Logo in PNG or IMG file of somesort</p>
+      <p>Brief description of what you all do/provide in a few sentences</p>
+      <p>Website URL</p>
+      <p>Contact Email if so desired (so prospective customers can reach you directly)</p>
+      <p>Social Media Links if applicable</p></strong>
+      </p>
+      <br>
+      <p>Please <a href="mailto:discovercatholicbusiness@gmail.com">email us</a> with these assets!</p>
+      <br>
       <p style="text-align: center;">Use the <a class="contact-toggle" href="javascript:void(0);">Subscribe</a> form to recieve email updates.</p>
 
 
-
       <!--STRIPE CHECKOUT BUTTONS-->
-      <p>
+
+<div class="pricingContainer">
+  <div class="pricingBox">
+<p>
       
-        <!-- Load Stripe.js on your website. -->
+<!-- Load Stripe.js on your website. -->
+
 <script src="https://js.stripe.com/v3"></script>
 
 <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
 <button
-  style="background-color:#e10000;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  style="background-color:#e10000;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1.3em"
   id="checkout-button-plan_HJwSy8Q2wfAxF8"
   role="link"
 >
-  Featured Listing
+  Featured Listing <strong>$405</strong> Annualy
 </button>
 
 <div id="error-message"></div>
@@ -143,18 +157,75 @@
   });
 })();
 </script>
+</p>
+</div>
 
 
+<!--Feature Monthly-->
+<div class="pricingBox">
+<p>
 <!-- Load Stripe.js on your website. -->
 <script src="https://js.stripe.com/v3"></script>
 
 <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
 <button
-  style="background-color:#e10000;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  style="background-color:#e10000;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1.3em"
+  id="checkout-button-plan_HJwSy8Q2wfAxF8"
+  role="link"
+>
+  Featured Listing <strong>$35</strong> Monthly
+</button>
+
+<div id="error-message"></div>
+
+<script>
+(function() {
+  var stripe = Stripe('pk_live_danaUQ5zEjk4fTETK5xkn3fZ00hBlly5hs');
+
+  var checkoutButton = document.getElementById('checkout-button-plan_HJwbUh4RmckjLV');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      lineItems: [{price: 'plan_HJwbUh4RmckjLV', quantity: 1}],
+      mode: 'subscription',
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: 'https://www.discovercatholicbusiness.com/success',
+      cancelUrl: 'https://www.discovercatholicbusiness.com/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+</script>
+</p>
+</div>
+<!--Featured Monthly END-->
+
+
+<!--Standard Listing Annual-->
+<div class="pricingBox">
+<p>
+<!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+  style="background-color:#e10000;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1.3em"
   id="checkout-button-plan_HJwWBJz61JZEc7"
   role="link"
 >
-  Standard Listing
+  Standard Listing <strong>$140</strong> Annualy
 </button>
 
 <div id="error-message"></div>
@@ -189,10 +260,63 @@
   });
 })();
 </script>
+</p>
+</div>
+<!--standard listing annual end-->
+
+<!--Standard Listing Monthly-->
+<div class="pricingBox">
+<p>
+<!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+  style="background-color:#e10000;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1.3em"
+  id="checkout-button-plan_HJwWBJz61JZEc7"
+  role="link"
+>
+  Standard Listing <strong>$12</strong> Monthly
+</button>
+
+<div id="error-message"></div>
+
+<script>
+(function() {
+  var stripe = Stripe('pk_live_danaUQ5zEjk4fTETK5xkn3fZ00hBlly5hs');
+
+  var checkoutButton = document.getElementById('checkout-button-plan_HJwdfKefYE7UVn');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      lineItems: [{price: 'plan_HJwdfKefYE7UVn', quantity: 1}],
+      mode: 'subscription',
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: 'https://www.discovercatholicbusiness.com/success',
+      cancelUrl: 'https://www.discovercatholicbusiness.com/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+</script>
+
+</p>
+</div>
 
 
-      </p>
-
+</div>
       <!--END STRIPE CHECKOUT BUTTONS-->
 
     </div>
